@@ -1,4 +1,7 @@
-
+# Patrick Normile
+# 10/28/2019
+# This program encrypts and decrypts a message using the Hill Cipher
+# Math 220 Project 2
 
 alphabeDict = {0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'E', 
                5: 'F', 6: 'G', 7: 'H', 8: 'I', 9: 'J', 
