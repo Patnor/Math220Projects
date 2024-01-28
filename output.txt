@@ -1,0 +1,28 @@
+
+The message is: HELLO WORLD
+
+The matrix for HELLO WORLD is:
+ 7  4 11 11 14 28
+22 14 17 11  3 28
+
+
+The key is:
+1 9
+6 7
+
+
+The inverse key is:
+-0.14893617021276595  0.19148936170212766
+  0.1276595744680851 -0.02127659574468085
+
+
+The encrypted message matrix is:
+(Key * Message Matrix) =
+205 130 164 110  41 280
+196 122 185 143 105 364
+
+
+The decrypted message matrix is:
+(Key Inverse * Encrypted Message Matrix) =
+ 7  4 11 11 14 28
+22 14 17 11  3 28

@@ -16,7 +16,6 @@ key = [
 def keyInverse2x2(key):
     determinant = (key[0][0] * key[1][1]) - (key[0][1] * key[1][0])
 
-    print('determinant = ' + str(determinant))
     if determinant == 0:
         return False
     else:
@@ -82,22 +81,57 @@ def decryptMessage(messageMatrix, keyI):
         
     return decryptedMessageMatrix
 
-# the inverse matrix of the key
-keyI = keyInverse2x2(key)
-print("The inverse key is ")
-print(keyI)
 
+def print_matrix(matrix):
+    # Calculate the maximum width of each column
+    column_widths = [max(len(str(row[i])) for row in matrix) for i in range(len(matrix[0]))]
+    
+    # Print the matrix with aligned columns
+    for row in matrix:
+        print(" ".join(str(row[i]).rjust(column_widths[i]) for i in range(len(row))))
+
+
+# Define a function to print to file
+def print_to_file(filename, *args):
+    with open(filename, 'a') as f:
+        for arg in args:
+            print(arg, file=f)
+        
+
+filename = "output.txt"
 # create the message to encrypt
 message = 'HELLO WORLD'
+print()
+print("The message is: " + message )
+print()
+
+print("The matrix for {} is: ".format(message))
 messageMatrix = createMessageMatrix(message, alphabeDict)
-print(messageMatrix)
+print_matrix(messageMatrix)
+print("\n")
+
+
+print("The key is: ")
+print_matrix(key)
+print("\n")
+
+
+keyI = keyInverse2x2(key)
+print("The inverse key is: ")
+print_matrix(keyI)
+print("\n")
 
 # encrypt the message
 encryptedMessageMatrix = encryptMessage(messageMatrix, key)
-print("The encryptedMessageMatrix is ")
-print(encryptedMessageMatrix)
+print("The encrypted message matrix is: ")
+print("(Key * Message Matrix) = ")
+print_matrix(encryptedMessageMatrix)
+print("\n")
 
 # decrypt the message
 decryptedMessageMatrix = decryptMessage(encryptedMessageMatrix, keyI)
-print("The decryptedMessageMatrix is ")
-print(decryptedMessageMatrix)
+print("The decrypted message matrix is: ")
+print("(Key Inverse * Encrypted Message Matrix) =")
+print_matrix(decryptedMessageMatrix)
+print("\n")
+
