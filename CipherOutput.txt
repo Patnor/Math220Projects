@@ -1,3 +1,6 @@
+#  Patrick Normile
+# Output text for the Hill cipher
+# project 2
 
 The message is: HELLO WORLD
 
@@ -26,3 +29,7 @@ The decrypted message matrix is:
 (Key Inverse * Encrypted Message Matrix) =
  7  4 11 11 14 28
 22 14 17 11  3 28
+
+
+
+In this project, I took a simple message and put numeric values representing the letters into a 2xN matrix. I then multiplied the matrix by a 2x2 matrix key. I then used the inverse of the key matrix to decode the encrypted message into its original form.
